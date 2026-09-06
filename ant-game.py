@@ -114,16 +114,42 @@ while True:
 
 # Victory condition 1
     if "nectar" in inventory and currentRoom == "Brood Chamber":
-        print("You fed your sister some yummy nectar! You win!")
+        print("You fed your sister some yummy nectar!")
+        print("Look at how happy she is:")
+        print("      _.._        ")
+        print("    .'    '.      ")
+        print("   /•  _   •\     ")
+        print("  :          |    ")
+        print("  :          |    ")
+        print("  |          :    ")
+        print("  |          :    ")
+        print("   \        /     ")
+        print("    `'--..-'      ")
+        print("YOU WIN!")
         break
 
-# Victory condition 2
-    if "friend" in inventory and "nectar" in inventory and currentRoom == "Brood Chamber":
-        print("Congratulations! You outsourced the work to your friend")
-        print("You win!")
+
 
 # Loss condition
     if "item" in rooms[currentRoom] and rooms[currentRoom]["item"] == "person":
         print("You were squished by a person")
+        print("   |         J                           ")
+        print("   |         J                           ")
+        print("   |         J                           ")
+        print("   |         J                           ")
+        print("   |         |                           ")
+        print("   F         |                           ")
+        print("   F         I                           ")
+        print("   F          7                          ")
+        print("  J            ;:.                       ") 
+        print(" /   .          ::::...                  ")
+        print(" J   :               ::::...             ")
+        print(" F   `                       *-..___     ")
+        print(" J        ___.....____             `*J   ")
+        print(" **----*              **----****---^     ")
+        print("                                         ")
+        print("                    \/                   ")
+        print("       <(###)-(  )(x_x)                  ")
+        print("             '//'\                       ")
         print("Game over!")
         break
