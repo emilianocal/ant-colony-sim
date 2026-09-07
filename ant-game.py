@@ -11,6 +11,7 @@ Feed your ant sister simulator
 Commands:
     go [direction]
     get [item]
+    (and a few secret ones)
           ''')
 
 
@@ -27,6 +28,9 @@ def status():
 
 # Creating the inventory so we can have items
 inventory   = []
+
+# Trash to get rid of items
+trash       = []
 
 # Below I will create a "dictionary" that maps out where 
 # rooms are, relative to each other
@@ -112,6 +116,7 @@ while True:
 
 
 
+
 # Victory condition 1
     if "nectar" in inventory and currentRoom == "Brood Chamber":
         print("You fed your sister some yummy nectar!")
@@ -130,7 +135,7 @@ while True:
 
 
 
-# Loss condition
+# Loss condition 1
     if "item" in rooms[currentRoom] and rooms[currentRoom]["item"] == "person":
         print("You were squished by a person")
         print("   |         J                           ")
@@ -151,5 +156,12 @@ while True:
         print("                    \/                   ")
         print("       <(###)-(  )(x_x)                  ")
         print("             '//'\                       ")
+        print("Game over!")
+        break
+
+# Loss condition 2
+    if "nectar" in inventory and move[0] == "drink" and move[1] == "nectar":
+        print("You drank the nectar!")
+        print("Your sister won't be able to eat now :(")
         print("Game over!")
         break
