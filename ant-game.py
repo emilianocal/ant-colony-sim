@@ -58,11 +58,17 @@ rooms = {
 
             "Food Chamber 2":   {
                                  "up"   : "Brood Chamber",
+                                 "down" : "Cemetary",
                                  "item" : "nectar"
                                 },
             "Food Chamber 3":   {
                                  "back" : "Brood Chamber",
                                  "item" : "cheeto dust"
+                                },
+
+            "Cemetary"      :   {
+                                 "up"   : "Food Chamber 2",
+                                 "item" : "dead sister"
                                 }
         }
 
@@ -90,7 +96,7 @@ while True:
 
 # the first element is the verb (get, move, etc)
 # the second element is the object (sword, north, etc)
-    
+
     if move[0] == "go":
     # this line says that the movement has to be in the dictionary
         if move[1] in rooms[currentRoom]:
@@ -114,9 +120,6 @@ while True:
         else:
             print(f"You do not see a {move[1]} here!")
 
-
-
-
 # Victory condition 1
     if "nectar" in inventory and currentRoom == "Brood Chamber":
         print("You fed your sister some yummy nectar!")
@@ -130,14 +133,14 @@ while True:
         print("  |          :    ")
         print("   \        /     ")
         print("    `'--..-'      ")
-        print("YOU WIN!")
+        print("\033[32mYOU WIN!\033[0m")
         break
 
 
 
 # Loss condition 1
     if "item" in rooms[currentRoom] and rooms[currentRoom]["item"] == "person":
-        print("You were squished by a person")
+        print("You were squished by a \033[91mperson\033[0m")
         print("   |         J                           ")
         print("   |         J                           ")
         print("   |         J                           ")
