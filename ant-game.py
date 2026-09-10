@@ -120,6 +120,14 @@ while True:
         else:
             print(f"You do not see a {move[1]} here!")
 
+    if move[0] == "call":
+        if move[1] in inventory:
+            trash.append(move[1])
+            print(f"{move[1]} discarded")
+        else:
+            print("test failed")
+
+
 # Victory condition 1
     if "nectar" in inventory and currentRoom == "Brood Chamber":
         print("You fed your sister some yummy nectar!")
@@ -159,12 +167,12 @@ while True:
         print("                    \/                   ")
         print("       <(###)-(  )(x_x)                  ")
         print("             '//'\                       ")
-        print("Game over!")
+        print("\033[91mGame Over!\033[0m")
         break
 
 # Loss condition 2
     if "nectar" in inventory and move[0] == "drink" and move[1] == "nectar":
         print("You drank the nectar!")
         print("Your sister won't be able to eat now :(")
-        print("Game over!")
+        print("\033[91mGame Over!\033[0m")
         break
